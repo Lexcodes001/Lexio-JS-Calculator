@@ -26,7 +26,7 @@ body{
 }
 
 .calculator{
-   width: auto;
+   max-width: 20rem;
    height: auto;
    margin: 1.5rem;
    display: flex;
@@ -61,7 +61,7 @@ body{
 }
 
 .display{
-   width: auto;
+   max-width: 16rem;
    padding: 1rem 0;
    margin: 1rem;
    display: flex;
@@ -76,7 +76,6 @@ body{
    color: var(--txt-color-two);
    font-size: 2rem;
    text-align: left;
-   overflow-x: scroll;
 }
 
 .first-operand:focus{
