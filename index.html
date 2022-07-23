@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Lexio Calculator</title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body>
+   
+   <div class="calculator">
+      
+      <div class="top">
+         
+         <div class="theme" id="themeToggler">Dark Mode</div>
+         
+         <div class="calc-name">
+            <h1><span class="txt1">LEXIO</span> CALC.</h1>
+         </div>
+         
+      </div>
+      
+      <div class="display">
+         <div class="first-operand" id="firstOperand" contenteditable=""></div>
+         <div class="second-operand" id="secondOperand"></div>
+      </div>
+      
+      <div class="btn-flex">
+         
+         <div class="openbtn" onclick="openBtn()"> ⟨ </div>
+         
+         <div class="other-btns" id="otherBtns">
+            <div class="closebtn">
+               <a onclick="closeBtn()">×</a>
+            </div>
+            
+            <div class="btns">
+            <div class="button btn2 txt1">sin</div>
+            <div class="button btn2 txt1">cos</div>
+            <div class="button btn2 txt1">tan</div>
+            <div class="button btn2 txt1">log</div>
+            <div class="button btn2 txt1">asin</div>
+            <div class="button btn2 txt1">acos</div>
+            <div class="button btn2 txt1">atan</div>
+            <div class="button btn2 txt1">log2</div>
+            <div class="button btn2 txt1">sinh</div>
+            <div class="button btn2 txt1">cosh</div>
+            <div class="button btn2 txt1">tanh</div>
+            <div class="button btn2 txt1">log10</div>
+            <div class="button btn2 txt1">abs</div>
+            <div class="button btn2 txt1">³√</div>
+            <div class="button btn2 txt1">E</div>
+            <div class="button btn2 txt1">Ran#</div>
+         </div>
+         </div>
+         
+         <div class="btns">
+         <div class="button txt1">AC</div>
+         <div class="button txt1">(</div>
+         <div class="button txt1">)</div>
+         <div class="button txt1">DEL</div>
+         <div class="button txt1">√</div>
+         <div class="button txt1">^</div>
+         <div class="button txt1">/</div>
+         <div class="button txt1">×</div>
+         <div class="button txt2">7</div>
+         <div class="button txt2">8</div>
+         <div class="button txt2">9</div>
+         <div class="button txt1">-</div>
+         <div class="button txt2">4</div>
+         <div class="button txt2">5</div>
+         <div class="button txt2">6</div>
+         <div class="button txt1">+</div>
+         <div class="button txt2">1</div>
+         <div class="button txt2">2</div>
+         <div class="button txt2">3</div>
+         <div class="button equals">=</div>
+         <div class="button txt2">.</div>
+         <div class="button txt2">0</div>
+         <div class="button txt2">%</div>
+         </div>
+      </div>
+      
+   </div>
+   
+   <footer class="footer">
+     ©2022 LexCodes.
+   </footer>
+   
+   <script src="script.js"></script>
+
+</body>
+
+</html>
