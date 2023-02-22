@@ -27,9 +27,9 @@ document.getElementById('themeToggler').addEventListener('click', ()=>{
 });
 
 //code for calculator operations 
-let firstDisplay = document.getElementById('firstOperand');
-
-let secondDisplay = document.getElementById('secondOperand');
+let firstDisplay = document.querySelector('.display .first-operand'),
+  secondDisplay = document.querySelector('.display .second-operand'),
+  displayBox = document.querySelector('.display');
 
 let toDeg = 180/Math.PI;
 
@@ -41,227 +41,261 @@ buttons.map( button => {
     button.addEventListener('click', (e) => {
         switch(e.target.innerText){
            case 'sin':
-              firstDisplay.innerText = Math.sin(firstDisplay.innerText * toRad);
-              secondDisplay.innerText = firstDisplay.innerText;
-                if (firstDisplay.innerText.length < 10) {
-                   firstDisplay.innerText = firstDisplay.innerText;
+              firstDisplay.value = Math.sin(firstDisplay.value * toRad);
+              
+              if (firstDisplay.value.length < 4) {
+                  firstDisplay.value = firstDisplay.value;
+                  secondDisplay.value = firstDisplay.value;
                 }
                 else {
-                   firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+                  firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+                  secondDisplay.value = firstDisplay.value;
                 }
               break;
            
            case 'cos':
-           firstDisplay.innerText = Math.cos(firstDisplay.innerText * toRad);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.cos(firstDisplay.value * toRad);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'tan':
-           firstDisplay.innerText = Math.tan(firstDisplay.innerText * toRad);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.tan(firstDisplay.value * toRad);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'asin':
-           firstDisplay.innerText = Math.asin(firstDisplay.innerText) * toDeg;
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.asin(firstDisplay.value) * toDeg;
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'acos':
-           firstDisplay.innerText = Math.acos(firstDisplay.innerText) * toDeg;
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.acos(firstDisplay.value) * toDeg;
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'atan':
-           firstDisplay.innerText = Math.atan(firstDisplay.innerText) * toDeg;
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.atan(firstDisplay.value) * toDeg;
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'sinh':
-           firstDisplay.innerText = Math.sinh(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.sinh(firstDisplay.value);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'cosh':
-           firstDisplay.innerText = Math.cosh(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.cosh(firstDisplay.value);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'tanh':
-           firstDisplay.innerText = Math.tanh(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.tanh(firstDisplay.value);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'log':
-           firstDisplay.innerText = Math.log(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.log(firstDisplay.value);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'log2':
-           firstDisplay.innerText = Math.log2(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.log2(firstDisplay.value);
+           
+           if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'log10':
-           firstDisplay.innerText = Math.log10(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.log10(firstDisplay.value);
+           
+            if (firstDisplay.value.length < 4) {
+               firstDisplay.value = firstDisplay.value;
+               secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'abs':
-           firstDisplay.innerText = Math.abs(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.abs(firstDisplay.value);
+           
+             if (firstDisplay.value.length < 10) {
+                firstDisplay.value = firstDisplay.value;
+                secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+                firstDisplay.value = Number(firstDisplay.value).toFixed(9);
+                secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case '³√':
-           firstDisplay.innerText = Math.cbrt(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.cbrt(firstDisplay.value);
+           
+             if (firstDisplay.value.length < 10) {
+                firstDisplay.value = firstDisplay.value;
+                secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+                firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+                secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'E':
-           firstDisplay.innerText = Math.exp(firstDisplay.innerText);
-           secondDisplay.innerText = firstDisplay.innerText;
-             if (firstDisplay.innerText.length < 10) {
-                firstDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.exp(firstDisplay.value);
+           
+             if (firstDisplay.value.length < 10) {
+                firstDisplay.value = firstDisplay.value;
+                secondDisplay.value = firstDisplay.value;
              }
              else {
-                firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+                firstDisplay.value = Number(firstDisplay.value).toFixed(9);
+                secondDisplay.value = firstDisplay.value;
              }
            break;
            
            case 'Ran#':
-           firstDisplay.innerText = Math.random(firstDisplay.innerText);
-           firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(3);
-           secondDisplay.innerText = firstDisplay.innerText;
+           firstDisplay.value = Math.random(firstDisplay.value);
+           firstDisplay.value = Number(firstDisplay.value).toFixed(3);
+           secondDisplay.value = firstDisplay.value;
            break;
            
             case '×':
-              firstDisplay.innerText += '*';
+              firstDisplay.value += '*';
               break;
               
             case '√':
-               firstDisplay.innerText = Math.sqrt(firstDisplay.innerText);
-               secondDisplay.innerText = firstDisplay.innerText;
-               firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(4);
+               firstDisplay.value = Math.sqrt(firstDisplay.value);
+               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
+               secondDisplay.value = firstDisplay.value;
                break;
             
             case '^':
-               firstDisplay.innerText += '**';
+               firstDisplay.value += '**';
                break;
             
             case 'AC':
-                firstDisplay.innerText = '0';
-                secondDisplay.innerText = '0';
+                firstDisplay.value = '0';
+                secondDisplay.value = '0';
                 break;
                 
             case '=':
                 try{
-                   if (firstDisplay.innerText == '') throw 'is empty!';
-                    firstDisplay.innerText = eval(firstDisplay.innerText);
-                    secondDisplay.innerText = '0';
-                      if (firstDisplay.innerText.length < 10) {
-                         firstDisplay.innerText = firstDisplay.innerText;
+                   if (firstDisplay.value == '') throw 'is empty!';
+                    firstDisplay.value = eval(firstDisplay.value);
+                    secondDisplay.value = '0';
+                    displayBox.classList.remove('show-elp');
+                    displayBox.classList.remove('show-fading');
+                      if (firstDisplay.value.length < 10) {
+                         firstDisplay.value = firstDisplay.value;
                       }
                       else {
-                         firstDisplay.innerText = Number(firstDisplay.innerText).toFixed(9);
+                         firstDisplay.value = Number(firstDisplay.value).toFixed(4);
                       }
                 } catch(err) {
-                    secondDisplay.innerText = "Input " + err;
+                    secondDisplay.value = "Input " + err;
                 }
                 break;
                 
             case 'DEL':
-               // if (display.innerText){
-                   firstDisplay.innerText = firstDisplay.innerText.slice(0, -1);
-                secondDisplay.innerText = firstDisplay.innerText;
+                   firstDisplay.value = firstDisplay.value.slice(0, -1);
+                secondDisplay.value = firstDisplay.value;
+                PosEnd(firstDisplay);
+                checkOverflow();
                 break;
                 
             default:
-                if (firstDisplay.innerText == '.') {
-               firstDisplay.innerText = '0.';
+                if (firstDisplay.value == '.') {
+               firstDisplay.value = '0.';
             }
-                if (firstDisplay.innerText == '0') {
-                   firstDisplay.innerText = '';
+                if (firstDisplay.value == '0') {
+                   firstDisplay.value = '';
                 }
-                firstDisplay.innerText += e.target.innerText;
-                secondDisplay.innerText = eval(firstDisplay.innerText);
-                
+                firstDisplay.value += e.target.innerText;
+                secondDisplay.value = eval(firstDisplay.value);
+                PosEnd(firstDisplay);
+                checkOverflow();
         }
     });
 });
@@ -275,3 +309,67 @@ function closeBtn() {
    document.getElementById('otherBtns').style.width = '0';
 }
 
+
+function PosEnd(end) {
+
+  var len = end.value.length;
+
+  // Mostly for Web Browsers 
+  if (end.setSelectionRange) {
+
+    end.focus();
+
+    end.setSelectionRange(len, len);
+
+  } else if (end.createTextRange) {
+
+    var t = end.createTextRange();
+
+    t.collapse(true);
+
+    t.moveEnd('character', len);
+
+    t.moveStart('character', len);
+
+    t.select();
+
+  }
+
+}
+
+
+function check(el) { 
+  var curOverf = el.style.overflow; 
+  if ( !curOverf || curOverf === "visible" ) 
+          el.style.overflow = "hidden"; 
+                  
+
+                var isOverflowing = el.clientWidth < el.scrollWidth
+
+                    || el.clientHeight < el.scrollHeight; 
+
+                  
+
+                el.style.overflow = curOverf; 
+
+                  
+
+                return isOverflowing; 
+
+            } 
+
+              
+
+function checkOverflow() {
+  if (check(firstDisplay)) {
+    displayBox.classList.add('show-elp');
+    displayBox.classList.add('show-fading');
+  } else{
+    displayBox.classList.remove('show-elp');
+    displayBox.classList.remove('show-fading');
+  }
+}
+
+//firstDisplay.value = 'SUCCESS';
+
+//firstDisplay.value += 'SUCCESS';

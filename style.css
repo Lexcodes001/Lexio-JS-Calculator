@@ -2,7 +2,10 @@
 
 :root{
    --theme: #1c1c1c;
-   --bg-color: #ecf0f3;
+   --bg-color: rgba(236, 240, 243, 1);
+   --opacity-bg-color: rgba(236, 240, 243, .5);
+   --opacity-bg-color1: rgba(236, 240, 243, .5);
+   --opacity-bg-color2: rgba(236, 240, 243, 0);
    --txt-color-one: #4d12f5;
    --txt-color-two: #000;
    --shadow-color-one: #f8f9fa;
@@ -13,6 +16,7 @@
 
 *{
    box-sizing: border-box;
+   font-family: 'Montserrat', sans-serif;
 }
 
 body{
@@ -22,11 +26,10 @@ body{
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   font-family: 'Montserrat', sans-serif;
 }
 
 .calculator{
-   max-width: 20rem;
+   width: 17rem;
    height: auto;
    margin: 1.5rem;
    display: flex;
@@ -62,9 +65,9 @@ body{
 }
 
 .display{
-   max-width: 16rem;
+   width: 15rem;
    padding: 1rem 0;
-   margin: 1rem;
+   margin: 1rem 1rem 0;
    display: flex;
    flex-direction: column;
    line-height: 2rem;
@@ -73,13 +76,33 @@ body{
    box-shadow: 4px 4px 4px var(--shadow-color-two) inset, -4px -4px 4px var(--shadow-color-one) inset;
 }
 
+.display.show-elp::before{
+  content: "...";
+  position: absolute;
+  left: 4.6rem;
+  bottom: 17.8rem;
+  opacity: .5;
+  z-index: 5;
+}
+
 .first-operand{
    color: var(--txt-color-two);
-   font-size: 2rem;
+   font-size: 1.5rem;
    text-align: left;
 }
 
-.first-operand:focus{
+
+.display.show-fading .fading{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 4.6rem;
+  bottom: 17.8rem;
+  z-index: 2;
+  background-image: linear-gradient(90deg, var(--bg-color), var(--bg-color), var(--opacity-bg-color1), var(--opacity-bg-color2));
+}
+
+.first-operand:focus, .second-operand:focus{
    border: none;
    outline: none;
 }
@@ -90,22 +113,27 @@ body{
    text-align: right;
 }
 
+
 .first-operand, .second-operand{
+   max-width: 18rem;
    padding-left: 1rem;
    padding-right: 1rem;
    word-wrap: break-word;
+   background: none;
+   outline: none;
+   border: none;
 }
 
 .btns{
    display: grid;
    grid-template-columns: auto auto auto auto;
-   grid-gap: .7rem;
-   padding-top: 1.5rem;
+   grid-gap: .9rem;
+   padding-top: 1rem;
    margin: 1rem;
 }
 
 .button{
-   width: 2.5rem;
+   width: 2.7rem;
    height: 2.5rem;
    display: flex;
    justify-content: center;
@@ -114,9 +142,12 @@ body{
    font-size: 1rem;
    font-weight: bold;
    border: 1px solid var(--btn-border-color);
-   border-radius: 50%;
+   border-radius: 30%;
    background-color: var(--bg-color);
    box-shadow: 4px 4px 5px var(--shadow-color-two), -4px -4px 5px var(--shadow-color-one);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
 }
 
 .button:active{
@@ -127,9 +158,9 @@ body{
 
 .equals{
    color: var(--bg-color);
-   width: auto;
+   width: 2.7rem;
    height: auto;
-   border-radius: 2rem;
+   border-radius: .9rem;
    border: 2px solid var(--bg-color);
    background-color: var(--txt-color-one);
    grid-area: 5 / 4 / 7 / 5;
@@ -156,6 +187,7 @@ body{
    width: 0;
    position: absolute;
    z-index: 1;
+   border-radius: 0 0 1rem 1rem;
    background-color: var(--bg-color);
    overflow-y: scroll;
    transition: 0.5s ease-out;
@@ -163,7 +195,7 @@ body{
 
 .openbtn{
    padding: .5rem;
-   border-radius: .5rem .5rem;
+   border-radius: .5rem 0 0 .5rem;
    color: var(--bg-color);
    background-color: var(--txt-color-one);
    font-size: 1rem;
