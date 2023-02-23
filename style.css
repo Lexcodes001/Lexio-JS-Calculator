@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root{
-   --theme: #1c1c1c;
+   --theme: rgba(28, 28, 28, 1);
    --bg-color: rgba(236, 240, 243, 1);
    --opacity-bg-color: rgba(236, 240, 243, .5);
-   --opacity-bg-color1: rgba(236, 240, 243, .5);
-   --opacity-bg-color2: rgba(236, 240, 243, 0);
+   --opacity-bg-color1: rgba(236, 240, 243, 0);
    --txt-color-one: #4D12F5;
    --txt-color-two: #000;
    --shadow-color-one: #f8f9fa;
@@ -77,11 +76,12 @@ body{
 }
 
 .display.show-elp::before{
+  color: var(--txt-color-two);
   content: "...";
   position: absolute;
-  left: 4.6rem;
-  bottom: 17.8rem;
-  opacity: .5;
+  left: 73.6px;
+  bottom: 284.8px;
+  opacity: .4;
   z-index: 5;
 }
 
@@ -95,10 +95,10 @@ body{
   width: 2rem;
   height: 2rem;
   position: absolute;
-  left: 4.6rem;
-  bottom: 17.8rem;
+  left: 73.6px;
+  bottom: 284.8px;
   z-index: 2;
-  background-image: linear-gradient(90deg, var(--bg-color), var(--bg-color), var(--opacity-bg-color1), var(--opacity-bg-color2));
+  background-image: linear-gradient(90deg, var(--bg-color), var(--bg-color), var(--opacity-bg-color), var(--opacity-bg-color1));
 }
 
 .first-operand:focus, .second-operand:focus{

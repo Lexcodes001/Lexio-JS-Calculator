@@ -4,6 +4,8 @@ document.getElementById('themeToggler').addEventListener('click', ()=>{
     span.classList.toggle('dark');
     if(span.classList.contains('dark')){
         document.documentElement.style.setProperty('--bg-color', '#1c1c1c');
+        document.documentElement.style.setProperty('--opacity-bg-color', 'rgba(28, 28, 28, .5)');
+        document.documentElement.style.setProperty('--opacity-bg-color1', 'rgba(28, 28, 28, 0)');
         document.documentElement.style.setProperty('--txt-color-one', '#ffab08');
         document.documentElement.style.setProperty('--txt-color-two', '#fff');
         document.documentElement.style.setProperty('--btn-border-color', '#282828');
@@ -15,6 +17,8 @@ document.getElementById('themeToggler').addEventListener('click', ()=>{
     }
     else{
         document.documentElement.style.setProperty('--bg-color', '#ecf0f3');
+        document.documentElement.style.setProperty('--opacity-bg-color', 'rgba(236, 240, 243, .5)');
+        document.documentElement.style.setProperty('--opacity-bg-color1', 'rgba(236, 240, 243, 0)');
         document.documentElement.style.setProperty('--txt-color-one', '#4d12f5');
         document.documentElement.style.setProperty('--txt-color-two', '#000');
         document.documentElement.style.setProperty('--btn-border-color', '#ecf0f3');
