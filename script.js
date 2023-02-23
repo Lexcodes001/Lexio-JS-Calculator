@@ -258,6 +258,8 @@ buttons.map( button => {
             case 'AC':
                 firstDisplay.value = '0';
                 secondDisplay.value = '0';
+                PosEnd(firstDisplay);
+                checkOverflow();
                 break;
                 
             case '=':
@@ -279,11 +281,18 @@ buttons.map( button => {
                 break;
                 
             case 'DEL':
-                   firstDisplay.value = firstDisplay.value.slice(0, -1);
+              if (firstDisplay.value == 0) {
+                firstDisplay.value = firstDisplay.value.slice(0, -1);
+                firstDisplay.value = '0';
+                secondDisplay.value = '0';
+              } else {
+                firstDisplay.value = firstDisplay.value.slice(0, -1);
                 secondDisplay.value = firstDisplay.value;
-                PosEnd(firstDisplay);
-                checkOverflow();
-                break;
+              }
+              
+              PosEnd(firstDisplay);
+              checkOverflow();
+              break;
                 
             default:
                 if (firstDisplay.value == '.') {

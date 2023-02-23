@@ -6,7 +6,7 @@
    --opacity-bg-color: rgba(236, 240, 243, .5);
    --opacity-bg-color1: rgba(236, 240, 243, .5);
    --opacity-bg-color2: rgba(236, 240, 243, 0);
-   --txt-color-one: #4d12f5;
+   --txt-color-one: #4D12F5;
    --txt-color-two: #000;
    --shadow-color-one: #f8f9fa;
    --shadow-color-two: #d3dce3;
@@ -91,7 +91,6 @@ body{
    text-align: left;
 }
 
-
 .display.show-fading .fading{
   width: 2rem;
   height: 2rem;
@@ -141,10 +140,13 @@ body{
    text-align: center;
    font-size: 1rem;
    font-weight: bold;
-   border: 1px solid var(--btn-border-color);
+   /*border-top: .5px solid var(--shadow-color-two);
+   border-left: .5px solid var(--shadow-color-two);*/
+   border-bottom: .5px solid var(--shadow-color-one);
+   border-right: .5px solid var(--shadow-color-one);
    border-radius: 30%;
-   background-color: var(--bg-color);
-   box-shadow: 4px 4px 5px var(--shadow-color-two), -4px -4px 5px var(--shadow-color-one);
+   background-image: linear-gradient(to bottom right, var(--shadow-color-one), var(--shadow-color-two));
+   box-shadow: 3px 3px 5px 0 var(--shadow-color-two), -3px -3px 5px 0 var(--shadow-color-one);
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none;
@@ -160,9 +162,10 @@ body{
    color: var(--bg-color);
    width: 2.7rem;
    height: auto;
-   border-radius: .9rem;
-   border: 2px solid var(--bg-color);
+   border-radius: .7rem;
+   border: 1px solid var(--bg-color);
    background-color: var(--txt-color-one);
+   background-image: none;
    grid-area: 5 / 4 / 7 / 5;
 }
 
