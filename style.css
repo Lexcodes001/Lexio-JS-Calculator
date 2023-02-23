@@ -64,6 +64,7 @@ body{
 }
 
 .display{
+  position: relative;
    width: 15rem;
    padding: 1rem 0;
    margin: 1rem 1rem 0;
@@ -75,12 +76,22 @@ body{
    box-shadow: 4px 4px 4px var(--shadow-color-two) inset, -4px -4px 4px var(--shadow-color-one) inset;
 }
 
-.display.show-elp::before{
+.display.show-elp-left::before{
   color: var(--txt-color-two);
   content: "...";
   position: absolute;
-  left: 73.6px;
-  bottom: 284.8px;
+  left: 15px;
+  bottom: 32px;
+  opacity: .4;
+  z-index: 5;
+}
+
+.display.show-elp-right::before{
+  color: var(--txt-color-two);
+  content: "...";
+  position: absolute;
+  right: 15px;
+  bottom: 32px;
   opacity: .4;
   z-index: 5;
 }
@@ -91,14 +102,24 @@ body{
    text-align: left;
 }
 
-.display.show-fading .fading{
+.display.show-fading-left .fading-left{
   width: 2rem;
   height: 2rem;
   position: absolute;
-  left: 73.6px;
-  bottom: 284.8px;
+  left: 15px;
+  bottom: 35px;
   z-index: 2;
   background-image: linear-gradient(90deg, var(--bg-color), var(--bg-color), var(--opacity-bg-color), var(--opacity-bg-color1));
+}
+
+.display.show-fading-right .fading-right{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 15px;
+  bottom: 35px;
+  z-index: 2;
+  background-image: linear-gradient(90deg, var(--opacity-bg-color1), var(--opacity-bg-color), var(--bg-color), var(--bg-color));
 }
 
 .first-operand:focus, .second-operand:focus{
@@ -140,8 +161,8 @@ body{
    text-align: center;
    font-size: 1rem;
    font-weight: bold;
-   /*border-top: .5px solid var(--shadow-color-two);
-   border-left: .5px solid var(--shadow-color-two);*/
+   border-top: .3px solid var(--shadow-color-one);
+   border-left: .3px solid var(--shadow-color-one);
    border-bottom: .5px solid var(--shadow-color-one);
    border-right: .5px solid var(--shadow-color-one);
    border-radius: 30%;
@@ -153,9 +174,9 @@ body{
 }
 
 .button:active{
-   border: 1px solid var(--grey);
+   border: .5px solid var(--grey);
    box-shadow: none;
-   transition: .1s ease-out;
+   transition: .1s ease;
 }
 
 .equals{

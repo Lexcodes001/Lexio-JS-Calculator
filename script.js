@@ -35,229 +35,142 @@ let firstDisplay = document.querySelector('.display .first-operand'),
   secondDisplay = document.querySelector('.display .second-operand'),
   displayBox = document.querySelector('.display');
 
-let toDeg = 180/Math.PI;
-
-let toRad = Math.PI/180;
+var toDeg = 180/Math.PI, toRad = Math.PI/180, ans, ans2str, decPos, decNumLen;
 
 const buttons = Array.from(document.getElementsByClassName('button'));
 
 buttons.map( button => {
     button.addEventListener('click', (e) => {
         switch(e.target.innerText){
-           case 'sin':
-              firstDisplay.value = Math.sin(firstDisplay.value * toRad);
+            case 'sin':
+            ans = Math.sin(Number(firstDisplay.value) * toRad);
               
-              if (firstDisplay.value.length < 4) {
-                  firstDisplay.value = firstDisplay.value;
-                  secondDisplay.value = firstDisplay.value;
-                }
-                else {
-                  firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-                  secondDisplay.value = firstDisplay.value;
-                }
-              break;
+            checkAns(ans);
+            break;
            
-           case 'cos':
-           firstDisplay.value = Math.cos(firstDisplay.value * toRad);
+            case 'cos':
+            ans = Math.cos(firstDisplay.value * toRad);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'tan':
-           firstDisplay.value = Math.tan(firstDisplay.value * toRad);
+            case 'tan':
+            ans = Math.tan(firstDisplay.value * toRad);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'asin':
-           firstDisplay.value = Math.asin(firstDisplay.value) * toDeg;
+            case 'asin':
+            ans = Math.asin(firstDisplay.value) * toDeg;
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'acos':
-           firstDisplay.value = Math.acos(firstDisplay.value) * toDeg;
+            case 'acos':
+            firstDisplay.value = Math.acos(firstDisplay.value) * toDeg;
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'atan':
-           firstDisplay.value = Math.atan(firstDisplay.value) * toDeg;
+            case 'atan':
+            ans = Math.atan(firstDisplay.value) * toDeg;
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'sinh':
-           firstDisplay.value = Math.sinh(firstDisplay.value);
+            case 'sinh':
+            ans = Math.sinh(firstDisplay.value);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'cosh':
-           firstDisplay.value = Math.cosh(firstDisplay.value);
+            case 'cosh':
+            ans = Math.cosh(firstDisplay.value);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'tanh':
-           firstDisplay.value = Math.tanh(firstDisplay.value);
+            case 'tanh':
+            ans = Math.tanh(firstDisplay.value);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'log':
-           firstDisplay.value = Math.log(firstDisplay.value);
+            case 'log':
+            ans = Math.log(firstDisplay.value);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'log2':
-           firstDisplay.value = Math.log2(firstDisplay.value);
+            case 'log2':
+            ans = Math.log2(firstDisplay.value);
            
-           if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'log10':
-           firstDisplay.value = Math.log10(firstDisplay.value);
+            case 'log10':
+            ans = Math.log10(firstDisplay.value);
            
-            if (firstDisplay.value.length < 4) {
-               firstDisplay.value = firstDisplay.value;
-               secondDisplay.value = firstDisplay.value;
-             }
-             else {
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case 'abs':
-           firstDisplay.value = Math.abs(firstDisplay.value);
+            case 'abs':
+            ans = Math.abs(firstDisplay.value);
            
-             if (firstDisplay.value.length < 10) {
-                firstDisplay.value = firstDisplay.value;
-                secondDisplay.value = firstDisplay.value;
-             }
-             else {
-                firstDisplay.value = Number(firstDisplay.value).toFixed(9);
-                secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            checkAns(ans);
+            break;
            
-           case '³√':
-           firstDisplay.value = Math.cbrt(firstDisplay.value);
+            case '³√':
+            ans = Math.cbrt(firstDisplay.value);
+            checkAns(ans);
+            break;
            
-             if (firstDisplay.value.length < 10) {
-                firstDisplay.value = firstDisplay.value;
-                secondDisplay.value = firstDisplay.value;
-             }
-             else {
-                firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-                secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            case 'E':
+            ans = Math.exp(firstDisplay.value);
            
-           case 'E':
-           firstDisplay.value = Math.exp(firstDisplay.value);
+            checkAns(ans);
+            break;
            
-             if (firstDisplay.value.length < 10) {
-                firstDisplay.value = firstDisplay.value;
-                secondDisplay.value = firstDisplay.value;
-             }
-             else {
-                firstDisplay.value = Number(firstDisplay.value).toFixed(9);
-                secondDisplay.value = firstDisplay.value;
-             }
-           break;
+            case 'Ran#':
+            firstDisplay.value = Math.random(firstDisplay.value);
+            firstDisplay.value = Number(firstDisplay.value).toFixed(3);
+            secondDisplay.value = firstDisplay.value;
+            break;
            
-           case 'Ran#':
-           firstDisplay.value = Math.random(firstDisplay.value);
-           firstDisplay.value = Number(firstDisplay.value).toFixed(3);
-           secondDisplay.value = firstDisplay.value;
-           break;
+            case '+':
+              firstDisplay.value += '+';
+              PosEnd(firstDisplay);
+            break;
+            
+            case '-':
+              firstDisplay.value += '-';
+              PosEnd(firstDisplay);
+            break;
+            
+            case '÷':
+              firstDisplay.value += '/';
+              PosEnd(firstDisplay);
+            break;
+            
+            case '%':
+              firstDisplay.value += '%';
+              PosEnd(firstDisplay);
+            break;
            
             case '×':
               firstDisplay.value += '*';
+              PosEnd(firstDisplay);
               break;
               
             case '√':
-               firstDisplay.value = Math.sqrt(firstDisplay.value);
-               firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-               secondDisplay.value = firstDisplay.value;
-               break;
+                ans = Math.sqrt(firstDisplay.value);
+                checkAns(ans);
+                break;
             
             case '^':
-               firstDisplay.value += '**';
-               break;
+                firstDisplay.value += '**';
+                PosEnd(firstDisplay);
+                break;
             
             case 'AC':
                 firstDisplay.value = '0';
@@ -269,19 +182,16 @@ buttons.map( button => {
             case '=':
                 try{
                    if (firstDisplay.value == '') throw 'is empty!';
-                    firstDisplay.value = eval(firstDisplay.value);
+                    ans = eval(firstDisplay.value);
                     secondDisplay.value = '0';
-                    displayBox.classList.remove('show-elp');
-                    displayBox.classList.remove('show-fading');
-                      if (firstDisplay.value.length < 10) {
-                         firstDisplay.value = firstDisplay.value;
-                      }
-                      else {
-                         firstDisplay.value = Number(firstDisplay.value).toFixed(4);
-                      }
+                    displayBox.classList.remove('show-elp-left');
+                    displayBox.classList.remove('show-fading-left');
+                      checkOverflow();
                 } catch(err) {
                     secondDisplay.value = "Input " + err;
                 }
+                checkAns(ans);
+                checkOverflow();
                 break;
                 
             case 'DEL':
@@ -324,65 +234,72 @@ function closeBtn() {
 
 
 function PosEnd(end) {
-
   var len = end.value.length;
 
   // Mostly for Web Browsers 
   if (end.setSelectionRange) {
-
     end.focus();
-
     end.setSelectionRange(len, len);
-
   } else if (end.createTextRange) {
-
     var t = end.createTextRange();
-
     t.collapse(true);
-
     t.moveEnd('character', len);
-
     t.moveStart('character', len);
-
     t.select();
-
   }
-
 }
 
 
 function check(el) { 
   var curOverf = el.style.overflow; 
   if ( !curOverf || curOverf === "visible" ) 
-          el.style.overflow = "hidden"; 
-                  
-
+          el.style.overflow = "hidden";
                 var isOverflowing = el.clientWidth < el.scrollWidth
-
-                    || el.clientHeight < el.scrollHeight; 
-
-                  
-
-                el.style.overflow = curOverf; 
-
-                  
-
+                    || el.clientHeight < el.scrollHeight;
+                el.style.overflow = curOverf;
                 return isOverflowing; 
-
-            } 
-
-              
+            }
 
 function checkOverflow() {
-  if (check(firstDisplay)) {
-    displayBox.classList.add('show-elp');
-    displayBox.classList.add('show-fading');
+  if (check(firstDisplay) && firstDisplay.scrollLeft != 0) {
+    displayBox.classList.add('show-elp-left');
+    displayBox.classList.add('show-fading-left');
+  } else if (check(firstDisplay)) {
+    displayBox.classList.add('show-elp-right');
+    displayBox.classList.add('show-fading-right');
   } else{
-    displayBox.classList.remove('show-elp');
-    displayBox.classList.remove('show-fading');
+    displayBox.classList.remove('show-elp-left');
+    displayBox.classList.remove('show-fading-left');
   }
 }
 
-//firstDisplay.value = 'SUCCESS';
-
-//firstDisplay.value += 'SUCCESS';
+firstDisplay.addEventListener('scroll', function() {
+  
+  if (firstDisplay.scrollLeft == 0) {
+      displayBox.classList.remove('show-elp-left');
+      displayBox.classList.remove('show-fading-left');
+    } else {
+      displayBox.classList.add('show-elp-left');
+      displayBox.classList.add('show-fading-left');
+      displayBox.classList.remove('show-elp-right');
+      displayBox.classList.remove('show-fading-right');
+    }
+  });
+  
+  function checkAns(ans) {
+    ans2str = ans.toString();
+    decPos = ans2str.indexOf(".", 0);
+    decNumLen = ans2str.slice(decPos + 1).length;
+    
+    if ((Number(ans) - Math.floor(ans)) == 0) {
+      firstDisplay.value = ans;
+      secondDisplay.value = 0;
+    } else {
+      if (decNumLen <= 4) {
+        firstDisplay.value = Number(ans);
+      } else {
+        firstDisplay.value = Number(ans).toFixed(4);
+      }
+      secondDisplay.value = 0;
+    }
+  }
